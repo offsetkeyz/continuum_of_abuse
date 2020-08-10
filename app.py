@@ -6,8 +6,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-# DATABASE_URL = os.environ['DATABASE_URL']
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# heroku addons:create heroku-postgresql:hobby-dev
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:///tb1.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'dont-touch-me'
@@ -20,9 +19,6 @@ db = SQLAlchemy(app)
 def welcome_page():
     if request.method == "POST":
         name = request.form['name']
-        if name is None:
-            print("Please enter a name")
-
         # creates new user and returns user_id
         user_id = create_new_user(name)
         user = User.query.get(user_id)
