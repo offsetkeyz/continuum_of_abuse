@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from os import environ
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:///tb1.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -373,13 +372,12 @@ class User(db.Model):
 # create the Song model here + add a nice representation method
 class Term(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    term = db.Column(db.String(20), index=True, unique=False)
-    description = db.Column(db.String(100), index=False, unique=False)
+    term = db.Column(db.String, index=True, unique=False)
+    description = db.Column(db.String, index=False, unique=False)
 
     # representation method
     def __repr__(self):
         return "{}".format(self.term)
-
 
 
 if __name__ == '__main__':
