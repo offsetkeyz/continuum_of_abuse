@@ -26,7 +26,7 @@ def welcome_page():
 
         items = next_competitors_w(user_id)
 
-        return redirect(url_for('tournament', user_id=user_id, name=name,
+        return redirect(url_for('tournament', user_id=user_id, name=user.username,
                                 item_1=items[0], item_2=items[1]))
 
     return render_template('welcome.html')
