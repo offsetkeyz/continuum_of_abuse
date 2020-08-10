@@ -1,3 +1,5 @@
+from random import random
+
 from flask import Flask, request, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -144,7 +146,9 @@ def create_new_user(user_name):
         add_terms()
         term_list = Term.query.all()
 
-    # random.shuffle(term_list)
+    # shuffle terms
+    import random
+    random.shuffle(term_list)
     winners_list = ""
     winners_v = 'fffffffffffffffffftffff'
     losers_v = 'fffffftffff'
