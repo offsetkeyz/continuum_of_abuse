@@ -2,8 +2,12 @@ from flask import Flask, request, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
 from os import environ
+import psycopg2
 
 app = Flask(__name__)
+
+# DATABASE_URL = os.environ['DATABASE_URL']
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:///tb1.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'dont-touch-me'
