@@ -1,12 +1,11 @@
-import os
-
-import environ as environ
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.dialects import sqlite
+import os
 
 from methods import *
 from os import environ
+
+from methods import *
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:///tb1.db'
