@@ -3,16 +3,21 @@
     <link rel="stylesheet" href="..\..\static\main.css">
 
 <center>
-<h2>Welcome Team "{{ name | title}}"</h2>
-<h3>{{sub_round}}/17</h3>
-<div>
+<div class="center">
+    <h3>{{sub_round}}/17</h3>
+    <h2>Welcome Team {{ name | title}}</h2>
+    <h3>Working together as a class, please select which abusive behaviour is worse.</h3>
     <form method="POST">
-        <input class="checkbox-tools" type="radio" id="1" name="items" value="one" checked/>
-        <label class="for-checkbox-tools" for="1">{{ item_1 }}</label><br>
-        <input class="checkbox-tools"type="radio" id="2" name="items" value="two">
-        <label class="for-checkbox-tools" for="2">{{ item_2 }}</label><br>
-        <br>
-        <input type="submit" name="submit_button" value="Submit">
+          <label>
+            <input type="radio" id="1" class="option-input radio" name="items" value="one" checked />
+              <h3>{{ item_1 }}</h3>
+          </label>
+          <label>
+            <input type="radio" id="2" class="option-input radio" name="items" value="two" checked />
+             <h3>{{ item_2 }}</h3>
+          </label>
+        <br><br>
+        <input class="submit" type="submit" name="submit_button" value="Submit">
     </form>
 </div>
 <!--<main>-->

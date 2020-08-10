@@ -2,16 +2,14 @@
 {% block content %}
     <link rel="stylesheet" href="..\static\main.css">
 
-<center>
-<h2>Final List</h2>
-<h3></h3>
 
-<div class="col-12 pb-5">
-    <ol class="center">
+
+<div class="center">
+    <h2>--- Final List ---</h2>
+    <ol><h3>
     {% for i in final_list %}
-    <li>{{ i }}</li>
+        <li>{{ i }}</li>
     {% endfor %}
-    </ol>
+    </h3></ol>
 </div>
-</center>
 {% endblock %}
